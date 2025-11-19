@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pa{
+            color: red;
+        }
+        .para{
+            color: blue;
+            display: inline-block;
+        }
+        button{
+            background-color: black;
+            border-radius: 8px;
+            color: aliceblue;
+            padding: 3px;
+
+        }
+    </style>
+</head>
+<body>
+    <p class="para" id="pa">Hello there...</p>
+    <button onclick="textChange()">Change text</button>
+
+    <script>
+        function textChange() {
+            var x = document.getElementById('pa');
+            x.innerText = "Hi there...";
+            x.style.color = "blue";
+
+        }
+    </script>
+</body>
+</html>

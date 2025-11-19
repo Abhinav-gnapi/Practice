@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form page</title>
+    <link href="./demo/img/symbol-T.webp" rel="icon" type="image/icon">
+</head>
+<body>
+    <form target="_self" autocomplete="on" name="sample form" method="get">
+        <fieldset>
+            <legend>Personal details</legend>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" size="20">
+        <br>
+        <br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname">
+        </fieldset>
+        <br>
+        <label for="pass">Password</label>
+        <input type="password" id="pass" autofocus>
+        <br>
+        <br>
+        <input type="radio" id="html" name="language" value="HTML" checked>
+        <label for="html">HTML</label><br>
+        <input type="radio" id="js" name="language" value="JS">
+        <label for="js">JavaScript</label><br>
+        <input type="radio" id="js" name="language" value="CSS">
+        <label for="css">CSS</label>
+        <br>
+        <br>
+        <label for="fullstack">Fullstack</label>
+        <input type="checkbox" id="fullstack" name="skill" value="fullstack">
+        <label for="front-end">Front-end</label>
+        <input type="checkbox" id="front-end" name="skill" value="front-end">
+        <label for="back-end">Back-end</label>
+        <input type="checkbox" id="back-end" name="skill" value="back-end">
+        <br>
+        <br>
+        <label for="country">Country:</label>
+        <select id="country"  name="country" size="2" multiple>
+            <option>India</option>
+            <option value="canada">Canada</option>
+            <option selected>France</option>
+        </select>
+        <br>
+        <br>
+        <textarea name="message" rows="7" cols="35">
+        </textarea>
+        <br>
+        <br>
+        <input list="browsers"  name="browsers">
+        <datalist id="browsers">
+            <option value="Edge">
+            <option value="Chrome">
+            <option value="Safari">
+            <option value="Opera">
+        </datalist>
+        <br>
+        <br>
+        <label for="favcolor">select your fav color-</label>
+        <input type="color" id="favcolor" name="favcolor">
+        <br>
+        <br>
+        <label for="birthday">birthday</label>
+        <input type="date" id="birthday" name="birthday">
+        <input type="datetime" id="birthday" name="birthday">
+        <input type="datetime-local" id="birthday" name="birthday">
+        <br>
+        <br>
+        <label for="email">email</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <input type="hidden" id="custId" name="custId" value="3487">
+        <br>
+        <br>
+        <label for="bdaymonth">Birthday (month and year):</label>
+        <input type="month" id="bdaymonth" name="bdaymonth">
+        <br>
+          <label for="quantity">Quantity (between 1 and 5):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="5">
+        <br>
+        <br>
+          <label for="vol">Volume (between 0 and 50):</label>
+        <input type="range" id="vol" name="vol" min="0" max="50" value="10">
+        <br>
+        <br>
+        <label for="gsearch">Search Google:</label>
+        <input type="search" id="gsearch" name="gsearch">
+        <br>
+        <br>
+        <label for="myfile">select a file:</label>
+        <input id="myfile" type="file" name="myfile" accept=".pdf">
+        <br><br>
+        <label for="phone">Enter your phone number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[6-9]{2}[0-9]{8}">
+        <br>
+        <br>
+        <label for="appt">Select a time:</label>
+        <input type="time" id="appt" name="appt">
+        <br><br>
+        <input type="image" alt="submit" src="./demo/img/symbol-T.webp" height="40" width="40">
+        <br>
+        <input type="submit"></input>
+        <input type="reset"></input>
+        <button type="button" onclick="alert('Nothing here go back')">Click me!</button>
+        <input type="button" onclick="alert('Close')" value="click">
+    </form>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            /* flex-flow: row wrap; */
+            gap: 10px;
+            background-color: rgb(6, 158, 158);
+            /* justify-content: flex-start; */
+            /* align-items: flex-start; */
+            align-content: center;
+        }
+        .container div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(206, 196, 196);
+            height: 80px;
+            width: 80px;
+
+            padding: 20px;
+        }
+        .item2 {
+            flex-grow: 1;
+        }
+        .item1 {
+            flex-basis: 100px;
+        }
+        .item3 {
+            flex-shrink: 4;
+
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <div class="item1">Item 1</div>
+            <div class="item2">Item 1</div>
+            <div class="item3">Item 3</div>
+            <div class="item4">Item 1</div>
+            <div class="item5">Item 1</div>
+            <div class="item6">Item 1</div>
+            <!-- <div>Item 1</div>
+            <div>Item 1</div>
+            <div>Item 1</div>
+            <div>Item 1</div>
+            <div>Item 1</div>
+            <div>Item 1</div>
+            <div>Item 1</div>
+            <div>Item 1</div>
+            <div>Item 1</div>
+            <div style="height: 50px; order: 2;">Item 2</div>
+            <div style="height: 30px; order: 1; flex-grow:3;">Item 3</div>
+            <div style="height: 8px; flex-grow: 1;">Item 4</div> -->
+        </div>
+</body>
+</html>

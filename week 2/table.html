@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Table</title>
+    <link rel="icon" type="image/icon" href="./symbol-T.webp">
+    <style>
+        table,th,td{
+            /* border-collapse: collapse; */
+            border:2px groove black;
+            /* background-color: rgb(49, 145, 145); */
+        }
+        table{
+            padding: 3px;
+            width: 50%;
+            height: 50%;
+            overflow: auto;
+        }
+        td,th {
+            border: 2px groove white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: lightskyblue;
+        }
+        td:nth-child(even), th:nth-child(even){
+            background-color: lightskyblue;
+        }
+        tr:hover{
+            background-color: gray;
+            
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Top Companies</caption>
+        <tr style="width: fit-content;">
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+        <tr style="width: 550px;">
+            <td>Gnapi</td>
+            <td>Abhi</td>
+            <td>Canada</td>
+        </tr>
+        <tr>
+            <td>TCS</td>
+            <td>John</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>Qualcomm</td>
+            <td>Robert</td>
+            <td>India</td>
+        </tr>
+    </table>
+</body>
+</html>

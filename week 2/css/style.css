@@ -1,0 +1,32 @@
+ul {
+    list-style-type: circle;
+}
+
+li {
+    color: red;
+}
+
+div > p {
+    color: yellowgreen;
+}
+
+div + p {
+    color: violet;
+}
+
+/* div ~ p {
+    color: blue;
+} */
+
+a:link {
+    color: black;
+}
+a:active {
+    color:yellow;
+}
+a:hover {
+    color: red;
+}
+/* a:visited {
+    color: violet;
+} */

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fullname = "abhi";
+        console.log("fullname -> " +fullname);
+        // full-name = "abhi";
+        // console.log(full-name);
+        full_name = "abhi";
+        console.log("full_name -> " +full_name);
+        fullName = "abhi";
+        console.log("fullName -> " +fullName);
+        $fullname = "abhi";
+        console.log("$fullname -> " +$fullname);
+        // 123fullname = "abhi";
+        // console.log(123fullname);
+
+        var age = 18;
+        console.log("declared age -> " +age);
+        var age = 20;
+        console.log("re-declared age -> " + age);
+        age = 23;
+        console.log("updated age -> " + age);
+        
+        let id = 101;
+        console.log("declared id -> " + id);
+        // let id = 105;
+        // console.log("re-declared id -> " + id);
+        id = 110;
+        console.log("updated id -> " + id);
+
+        const pi = 3.14;
+        console.log("declared pi -> " + pi);
+        // const pi = 3.15;
+        // console.log("re-declared pi -> " + pi);
+        // pi = 3.16;
+        // console.log("updated pi -> " + pi);
+
+        var x;
+        console.log("x -> " + x);
+        let y;
+        console.log("y -> " + y);
+        // const z;
+        // console.log(z);
+        z = null;
+        console.log("z -> " + z);
+        isFollow = false;
+
+        let a = BigInt("123");
+        console.log("a -> " + a);
+        let b = BigInt(123);
+        console.log("b -> " + b);
+        let s = Symbol("hello!");
+        console.log(s);
+
+        console.log("typeof(fullName) -> " + typeof(fullName));
+        console.log("typeof(age) -> " + typeof(age));
+        console.log("typeof(id) -> " + typeof(id));
+        console.log("typeof(pi) -> " + typeof(pi));
+        console.log("typeof(x) -> " + typeof(x));
+        console.log("typeof(isFollow) -> " + typeof(isFollow));        
+        console.log("typeof(isFinite) -> " + typeof(isFinite));        
+        console.log("typeof(isNaN) -> " + typeof(isNaN));        
+        console.log("typeof(z) -> " + typeof(z));        
+        console.log("typeof(a) -> " + typeof(a));
+        console.log("typeof(s) -> " + typeof(s));
+        console.log("typeof(a) -> " + typeof(a));
+        
+        
+        const student = {
+            fullName : "Abhi",
+            age: 23,
+            cgpa: 7.03,
+            isPass: true
+        };
+        console.log(student);
+        console.log("typeof(student) -> " + typeof(student));
+        console.log("student name -> " + student.fullName);
+        console.log("student age -> " + student["age"]);
+        console.log("student cgpa -> " + student.cgpa);
+        console.log("student isPass ? -> " + student.isPass);
+
+
+    </script>
+</body>
+</html>
