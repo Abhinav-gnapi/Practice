@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myFunction(str) {
+            let count = 0;
+            let str1 = str.toLowerCase();
+            for(let i of str1){
+                if(i=='a'||i=='e'||i=='i'||i=='o'||i=='u'){
+                    count++;
+                }
+            }
+            return count;
+        }
+        console.log(myFunction("abhinav"));
+
+        const fn = (str) => {
+            let count = 0;
+            let str1 = str.toLowerCase();
+            for(let i of str1){
+                if(i=='a'||i=='e'||i=='i'||i=='o'||i=='u'){
+                    count++;
+                }
+            }
+            return count;
+        }
+        console.log(fn("abhinavk"));
+
+        let ar = [1,2,3,4,5,6,7,8,9,10]
+        ar.forEach( (i,ar,io) => {
+            console.log(i,ar,io)
+        });
+
+        const calculateSq = (i) => console.log(i**2)
+        ar.forEach(calculateSq)
+
+        let arr1 = ar.map((i) => {
+            return i*5;
+        })
+        console.log(arr1)
+
+        let evenArr = ar.filter((i) => {
+            return i % 2 == 0;
+        })
+        console.log(evenArr)
+
+        let vowel = ar.reduce((res, val) => {
+            return res+val;
+        })
+        console.log(vowel);
+
+        let n = prompt("enter a number");
+        let newArr = [];
+        for(let i=1;i<=n;i++){
+            newArr[i-1] = i;
+        }
+        console.log(newArr)
+        let sum = newArr.reduce( (res, val) => {
+            console.log(res);
+            return res + val;
+        });
+        console.log(sum);
+        let pro = newArr.reduce((res,val)=> {
+            console.log(res);
+            return res * val;
+        });
+        console.log(pro)
+
+
+        const person = {
+            name: "Abhi",
+            age: 23,
+            introduce: function () {
+                console.log(`My name is ${this.name} and I'm ${this.age} years old.`);
+            }
+        };
+        person.introduce();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header {
+            background-color: rgb(17, 7, 7);
+            /* text-align: center; */
+            line-height: 5rem;
+            height: 100px;
+            color: aliceblue;
+            position: relative;
+        }
+        div img {
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        div img:hover {
+            border: 4px solid black;
+            cursor: pointer;
+        }
+        .choice {
+            height: 165px;
+            width: 165px;
+        }
+        .choices { 
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 7rem;
+        }
+        .score-board {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 4rem;
+            margin: 6rem;
+            font-size: 2rem;
+        }
+        #user-score,#comp-score {
+            margin: 2rem;
+        }
+        .msg-container {
+            margin: -3rem 0px;
+        }
+        #msg {
+            display: inline;
+            background-color: black;
+            color: white;
+            font-size: large;
+            padding: 7px 15px;
+            border-radius: 7px;
+        }
+        .theme{
+            height: 35px;
+            width: 35px;
+            position: absolute;
+            z-index: 1;
+            right: 20px;
+            top: 20px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .reset {
+            margin-top: 5rem;
+            padding: 4px;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme"><img src="./images/icons8-moon-symbol-48.png" height="35px" width="35px"></button>
+    <div class="header">
+        <h2>Rock Paper Scissors</h2>
+    </div>
+    <div class="choices">
+        <div class="choice" id="rock">
+            <img src="./images/rock.png" alt="rock">
+        </div>
+        <div class="choice" id="paper">
+            <img src="./images/paper.png" alt="paper">
+        </div>
+        <div class="choice" id="scissors">
+            <img src="./images/scissors.png" alt="scissors">
+        </div>
+    </div>
+
+    <div class="score-board">
+        <div class="score">
+            <p>You</p>
+            <p id="user-score">0</p>
+        </div>
+        <div class="score">
+            <p>Computer</p>
+            <p id="comp-score">0</p>
+        </div>
+    </div>
+
+    <div class="msg-container">
+        <p id="msg">Choose your move</p>
+    </div>
+    <button class="reset">Reset Score</button>
+
+    <script>
+        let userInitialScore = 0;
+        let userscore = document.querySelector("#user-score")
+        let compInitialScore = 0;
+        let compscore = document.querySelector("#comp-score")
+        let msg = document.querySelector("#msg")
+        let theme = document.querySelector(".theme")
+
+        
+        const compGenChoice = () => {
+            const options = ["rock", "paper", "scissors"];
+            const indx = Math.floor(Math.random() * 3);
+            return options[indx];
+        }
+
+        const draw = () => {
+            console.log("Game was draw.")
+            msg.innerText = "Game was Draw, Play again."
+            msg.style.backgroundColor = "black";
+        }
+
+        const winner = (userWin, compChoice) => {
+            if(userWin) {
+                console.log("you Wins!")
+                userInitialScore = userscore.innerText = userInitialScore + 1;
+                msg.innerText = `You Win! computer choosed ${compChoice}`;
+                msg.style.backgroundColor = "green";
+                
+                
+            } else {
+                console.log("Computer wins!")
+                compInitialScore = compscore.innerText = compInitialScore + 1;
+                msg.innerText = `You Loss! computer choosed ${compChoice}`
+                msg.style.backgroundColor = "red";
+            }
+        }
+        
+        const playGame = (userChoice) => {
+            console.log("user selected ->", userChoice)
+            const compChoice = compGenChoice()
+            console.log("comp selected ->", compChoice)
+
+            if(userChoice === compChoice){
+                draw();
+            } else {
+                let userWin = true;
+                if(userChoice === "rock"){
+                    userWin = compChoice === "paper" ? false : true;
+                } else if(userChoice === "paper"){
+                    userWin = compChoice === "rock" ? true : false;
+                } else {
+                    userWin = compChoice === "rock" ? false : true;
+                }
+                winner(userWin, compChoice);
+            }
+        }
+        
+        const choices = document.querySelectorAll(".choice");
+
+        choices.forEach((choice) => {
+            choice.addEventListener("click", () => {
+                const userChoice = choice.getAttribute("id");
+                playGame(userChoice)
+            })
+        })
+
+        let reset = document.querySelector(".reset")
+        reset.addEventListener("click", () => {
+            userscore.innerText = 0;
+            compscore.innerText = 0;
+            msg.innerText = `Choose your move`;
+            msg.style.backgroundColor = "black";
+            // console.log(userscore, compscore)
+        })
+    
+
+        let mode = "light";
+        let body = document.querySelector("body")
+        let label = document.querySelectorAll("p")
+        let header = document.querySelector(".header")
+        theme.addEventListener("click", () => {
+            if(mode === "light"){
+                mode = "dark"
+                body.style.backgroundColor = "black"
+                userscore.style.color = "white"
+                compscore.style.color = "white"
+                label.forEach((lab) => {
+                    lab.style.color = "white"
+                })
+                header.style.backgroundColor = "rgb(175, 170, 170)"
+
+            } else {
+                body.style.backgroundColor = "white"
+                mode = "light"
+                userscore.style.color = "black"
+                compscore.style.color = "black"
+                label.forEach((lab) => {
+                    lab.style.color = "black"
+                })
+                header.style.backgroundColor = "rgb(17, 7, 7)"
+                msg.style.color = "white";
+            }
+        })
+    </script>
+    
+</body>
+</html>

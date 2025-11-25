@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para{
+            color: red;
+        }
+        .newClass {
+            background-color: greenyellow;
+        }
+        #box {
+            height: 150px;
+            width: 150px;
+            background-color: dodgerblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="newP">This is a new one</p>
+        <p class="para">This is a sample line</p>
+        <button id="bton" onclick="console.log('button was clicked')">Click me</button>
+        <button id="mode">Click to change</button>
+
+    </div>
+    <div id="box">
+        <h3>over me</h3>
+
+    </div>
+    <script>
+        let btn = document.createElement("button");
+        btn.innerText = "click me";
+        document.querySelector('body').append(btn);
+        btn.style.backgroundColor = "red";
+        btn.style.color = "white";
+        
+        
+        let para = document.querySelector('p');
+        console.log(para.getAttribute("class"));
+        para.setAttribute("class", "newClass");
+        // console.log(para.getAttribute("class"));
+        para.classList.add("newClass");
+
+        let p1 = document.createElement("p");
+        p1.innerText = "new Para created through script";
+        let div = document.querySelector('div');
+        div.append(p1);
+
+        // let newP = document.querySelector('newP');
+        // document.removeChild(div);
+        document.write("hello");
+        let box = document.getElementById('box');
+        // box.onclick = () => {
+        //     box.style.backgroundColor = 'red';
+        // }
+        box.onmouseover = () => {
+            box.style.backgroundColor = 'green';
+        }
+
+        let newBtn = document.querySelector('#bton');
+        // newBtn.addEventListener('click', () => {
+        //     console.log('clicked handler 1');
+        // });
+        // newBtn.addEventListener('click', () => {
+        //     console.log('clicked handler 2');
+        // });
+        // let handler3 = () => {
+        //     console.log('clicked handler 3');
+        // };
+        // newBtn.addEventListener('click', handler3);
+        // newBtn.addEventListener('click', () => {
+        //     console.log('clicked handler 4');
+        // });
+        // newBtn.removeEventListener('click', handler3)
+
+        // let body = document.querySelector('body');
+        let mode = document.querySelector('#mode');
+        let theme = 'white';
+        newBtn.addEventListener('click', () => {
+            if(theme == 'white')
+            {
+                theme = 'dark'
+                document.querySelector('body').style.backgroundColor = 'black';
+            }
+            else {
+                theme = 'white'
+            }
+        })
+        </script>
+</body>
+</html>

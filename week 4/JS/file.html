@@ -70,6 +70,7 @@
         console.log("typeof(a) -> " + typeof(a));
         console.log("typeof(s) -> " + typeof(s));
         console.log("typeof(a) -> " + typeof(a));
+        console.log("type(null) -> " + typeof(null));
         
         
         const student = {
@@ -85,7 +86,99 @@
         console.log("student cgpa -> " + student.cgpa);
         console.log("student isPass ? -> " + student.isPass);
 
+        let year = 2002;
+        console.log("Hello iam born on %d", year);
+        console.log(`Hello iam born on ${year}`);
 
+        let num = 3 / 0;
+        console.log(num);
+        console.log(typeof num);
+
+        let num2 = "abc" / 2;
+        console.log(num2);
+        console.log(typeof num2);
+
+        let k = 5;
+        let l = 3;
+        console.log("k = ",k, " & l = ",l);
+        console.log("k + l = ", k + l);
+        console.log("k - l = ", k - l);
+        console.log("k * l = ", k * l);
+        console.log("k / l = ", k / l);
+        console.log("k % l = ", k % l);
+        console.log("k ** l = ", k ** l);
+        console.log("k + l = " + k + l);
+        console.log("++k = ", ++k);
+        console.log("++l = ", ++l);
+        console.log("k++ = ", k++);
+        console.log("l++ = ", l++);
+        console.log("k = ",k, " & l = ",l);
+
+        age = 18;
+        if(age >= 18) {
+            console.log("You can vote...");
+        }
+        if(age < 18) {
+            console.log("You cannot vote!");
+        }
+        console.log(age>=18 ? "Adult" : "child");
+        let mode = "dark";
+        let color;
+        // if(mode === "dark"){
+        //     color = "white";
+        // }
+        // if(mode === "white") {
+        //     color = "black";
+        // }
+        if(mode === "dark"){
+            color = "white";
+        }
+        else {
+            color = "dark";
+        }
+        console.log(color);
+
+        let n = 11;
+        if(n % 2 == 0){
+            console.log(n, " is even");
+        } else {
+            console.log(n, " is odd");
+        }
+
+        let ab = 10;
+        let bc = 20;
+        if(bc>ab) bc=ab; ab = 50; console.log(bc, ab);
+
+
+        // let m = prompt("enter a number ");
+        // console.log(m%5==0 ? "mulltiple of 5" : "not a multiple of 5");
+        // m % 5 == 0 ? console.log(m, "is a multiple of 5") : console.log(m, "is not a multiple of 5");
+
+
+        for(let count = 0; count<5; count++){
+            console.log("hello!");
+            document.writeln("hello!");
+            document.writeln("world!");
+        }
+
+        let sum = 0;
+        for(let i=1; i<=10; i++){
+            sum +=i ;
+        }
+        console.log("sum -> ", sum);
+
+        let str = "abhinav";
+        for(let i of str){
+            console.log("i -> ", i);
+        }
+
+        let arr = [64, 73, 93, 63, 77];
+        console.log(arr);
+
+        let cities = ["pune", "mumbai", "kerala", "tamilnadu"];
+        for(let city of cities){
+            console.log(city.toUpperCase());
+        }
     </script>
 </body>
 </html>
