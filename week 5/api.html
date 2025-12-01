@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let promise = async () => {
+            const response = await fetch("https://cat-fact.herokuapp.com/facts")
+            // .then(response => response.json())
+            .then(response => console.log(response))
+            
+            // let data = await response.json();
+            // // let arr = Array(data);
+            // console.log(data);
+            // console.log(data.length)
+            // console.log(arr[7].added);
+        }
+    </script>
+</body>
+</html>

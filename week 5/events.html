@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+        background: orange;
+        /* height: 100%; */
+        /* width: 500px; */
+        }
+        #cursor {
+            position: fixed;
+            z-index: 20000;
+            height: 24px;
+            width: 24px;
+            background-color: #222;
+            border-radius: 50%;
+            pointer-events: none!important;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" onclick="change()">😎</div>
+    <button class="keydown">KeyDown</button>
+    <button class="keypress">KeyPress</button>
+    <button class="keyup">KeyUp</button>
+    <div id="cursor"></div>
+    <script>
+        var cursor = document.getElementById('cursor');
+        document.body.addEventListener("mousemove", function(e) {
+        var curX = e.clientX;
+        var curY = e.clientY;
+        
+        
+        cursor.style.left = curX - 7 + 'px';
+        cursor.style.top = curY - 7 + 'px';
+            
+        });
+        let box = document.querySelector(".box");
+        let keydown = document.querySelector(".keydown")
+        let keyup = document.querySelector(".keyup")
+        let keypress = document.querySelector(".keypress")
+        
+        // keydown.addEventListener("click", () => {
+        //     document.addEventListener("keydown", event => {
+        //     box.textContent = "Changed"
+        //     box.style.transform = 'translate(200px,300px)';
+        //     box.style.backgroundColor = "violet";
+        // });
+        // })
+
+        document.addEventListener("keydown", event => {
+        box.textContent ="😂"
+        // box.style.transform = 'translate(200px,300px)';
+        box.style.backgroundColor = "violet";
+        });
+
+        document.addEventListener("keyup", event => {
+            box.textContent = "😒"
+        // box.style.transform = 'translate(200px,300px)';
+        box.style.backgroundColor = "violet";
+        });
+        const movement = 10;
+        let x = 0;
+        let y = 0;
+        document.addEventListener("keydown", event => {
+            if(event.key.startsWith("Arrow")){
+                switch(event.key){
+                    case "ArrowUp":
+                        y-=movement;
+                        break;
+                    case "ArrowDown":
+                        y+=movement;
+                        break;
+                    case "ArrowLeft":
+                        x-=movement;
+                        break;
+                    case "ArrowRight":
+                        x+=movement;
+                        break;
+                }
+                box.style.top = `${y}px`;
+                box.style.left = `${x}px`;
+            }
+        })
+        
+        
+        // function change() {
+        //     box.textContent = "Changed"
+        //     box.style.transform = 'translate(200px,300px)';
+        //     box.style.backgroundColor = "yellow";
+        // }
+        // keyup.addEventListener("click", () => {
+        //     document.addEventListener("keyup", event => {
+        //     box.textContent = "Changed"
+        //     box.style.transform = 'translate(200px,300px)';
+        //     box.style.backgroundColor = "red";
+        // });
+        // })
+        
+        // keypress.addEventListener("click", () => {
+        //     document.addEventListener("keypress", event => {
+        //     box.textContent = "Changed"
+        //     box.style.transform = 'translate(200px,300px)';
+        //     box.style.backgroundColor = "green";
+        // });
+        // })
+        
+        // document.addEventListener("keyup", event => {
+        //     if(event.key == 'a') {
+
+        //         box.textContent = "Changed"
+        //         box.style.transform = 'translate(200px,300px)';
+        //         box.style.backgroundColor = "red";
+        //     }
+        // });
+
+        // document.addEventListener("keyup", event => {
+        //     box.textContent = "Changed"
+        //     box.style.transform = 'translate(200px,300px)';
+        //     box.style.backgroundColor = "red";
+        //     console.log(`key -> ${event.key}, code-> ${event.code}, location-> ${event.location}`)
+        // });
+//         document.addEventListener("keydown", (k) => {
+//    const keyName = k.key; // The key value (e.g., "a", "Enter")
+//    if (k.ctrlKey) {
+//        console.log(`Ctrl + ${keyName} was pressed.`);
+//    } else {
+//        console.log(`Key pressed: ${keyName}`);
+//    }
+// });
+// document.addEventListener("keyup", (i) => {
+//    if (i.key === "Control") {
+//        console.log("Control key was released.");
+//    }
+// });
+    </script>
+</body>
+</html>

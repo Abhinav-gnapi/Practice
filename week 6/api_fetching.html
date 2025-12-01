@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const URL = "https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty";
+        let promise = fetch(URL);
+        //     promise
+        //     .then(response => {
+            //         if(response.ok){
+                //             console.log("success")
+                //         }else {
+                    //             console.log("not successful")
+                    //         }
+                    //     }
+                    // )
+    promise.then(response => response.json())
+    // .then(response => response.json())
+    .then(data => console.log(`id:${data.id}\ntype:${data.type}\ntitle:${data.title}`))
+    // .then(data => console.log(data.title))
+    .catch(err => console.log(err))
+        // console.log(promise)
+    </script>
+</body>
+</html>

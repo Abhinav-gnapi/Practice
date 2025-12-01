@@ -13,6 +13,36 @@
         <h3 class="headings" id="heading3">Bengaluru</h3>
     </div>
     
-    <script src="./dom_script.js"></script>
+    <!-- <script src="./dom_script.js"></script> -->
+     <script>
+        class Toyota {
+            start() {
+                console.log("start..");
+            }
+            stop() {
+                console.log("stop!")
+            }
+            constructor(brand, mile) {
+                this.brand = brand;
+                this.mile = mile;
+                this.species = "homo";
+            }
+        }
+        class car extends Toyota {
+            constructor(name,mile){
+
+                super()
+            }
+        }
+let fortuner = new Toyota();
+fortuner.start();
+fortuner.stop();
+let c1 = new car("c1",10);
+c1.stop();
+// fortuner.setBrand("fortuner");
+// const car = Reflect.construct(Toyota, ["Susu"])
+// car.start();
+// console.log(car.brand)
+     </script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class User {
+            constructor(name, email){
+                this.email = email;
+                this.name = name;
+            }
+
+            viewData() {
+                console.log(`hey ${this.name} can you check your email ${this.email} is correct or not!`)
+            }
+        }
+        class Admin extends User{
+            constructor() {
+                super();
+            }
+            editData(){
+                console.log(User.name, User.email)
+            }
+        }
+
+        let user1 = new User("abhi", "abhi2gmail.com");
+        user1.viewData();
+        let admin1 = new Admin()
+        admin1.editData()
+        // admin1.viewData()
+    </script>
+</body>
+</html>

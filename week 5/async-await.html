@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function mrng(){
+            return new Promise((res, rej) => {
+                const wake = true;
+                setTimeout(()=>{
+
+                    if(wake){
+                        res("Good morning...")
+                    }
+                    else{
+                        rej("Did't wakeup")
+                    }
+                },2000)
+            })
+        }
+    function afternoon(){
+        return new Promise((res, rej) => {
+                const food = true;
+                setTimeout(()=>{
+
+                    if(food){
+                        res("Lunch done")
+                    }
+                    else{
+                        rej("Lunch not done")
+                    }
+                },3000)
+            })
+    }
+    function night() {
+        return new Promise((res, rej) => {
+                const sleep = true;
+                setTimeout(()=>{
+
+                    if(sleep){
+                        res("Gdnyt...")
+                    }
+                    else{
+                        rej("Didnt sleep")
+                    }
+                },4000)
+            })
+    }
+
+    async function day(){
+        try{
+
+            // const wakeup = await mrng();
+            // console.log(wakwup);
+    
+            // const lunch = await afternoon();
+            // console.log(lunch)
+    
+            // const sleep = await night()
+            // console.log(sleep)
+            const wakeup = mrng();
+            const lunch = afternoon();
+            const sleep = night()
+
+            const res = await Promise.all([wakeup,lunch,sleep])
+
+            console.log(res                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             )
+            console.log("Your day is completed!")
+        }
+        catch(err){
+            console.log("error:",err)
+        }
+    }
+    day()
+    </script>
+</body>
+</html>
