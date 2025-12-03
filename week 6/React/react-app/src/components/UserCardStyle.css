@@ -1,0 +1,16 @@
+.card{
+    margin: 20px;
+    width:140px;
+    padding: 12px;
+    line-height: 1.6rem;
+
+    /* background-color: rgb(224, 224, 243); */
+    /* border: 1px solid black; */
+    box-shadow: 1px 1px 5px;
+    border-radius: 6px;
+    float: left;
+}
+
+.nameH, .nameP {
+    display: inline-block;
+}
