@@ -1,5 +1,5 @@
-function DateGreeter(){
-    const date = new Date(2019, 1, 1, 18);
+function MyDateGreeter(){
+    const date = new Date();
     const hours = date.getHours();
     console.log(hours);
 
@@ -24,4 +24,4 @@ function DateGreeter(){
         </>
     )
 }
-export default DateGreeter;
+export default MyDateGreeter;

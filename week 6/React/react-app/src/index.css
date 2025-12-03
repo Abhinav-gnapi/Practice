@@ -1,3 +1,20 @@
-h1,h2,h3 {
-    color: azure;
+* {
+    margin: 0;
+    padding: 0;
 }
+.header {
+    background-color: yellow;
+    padding: 25px 100px;
+    /* width: 100%; */
+}
+h3,h4 {
+    padding: 0 12px;
+}
+
+
+footer {
+    text-align: center;
+    /* margin-top: 34%; */
+    bottom: 0;
+}
+

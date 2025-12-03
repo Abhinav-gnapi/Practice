@@ -1,0 +1,28 @@
+.card{
+    margin: 20px;
+    height: 250px;
+    width: 360px;
+    padding: 12px;
+
+    /* background-color: rgb(224, 224, 243); */
+    /* border: 1px solid black; */
+    box-shadow: 1px 1px 5px;
+    border-radius: 6px;
+    float: left;
+}
+
+img {
+    height: 180px;
+    width: 340px;
+    padding: 10px;
+    /* object-fit: cover; */
+}
+
+.price {
+    float: right;
+}
+
+/* .bugu {
+    height: 500px;
+    width: 500px;
+} */

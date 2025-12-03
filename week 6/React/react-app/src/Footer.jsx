@@ -1,5 +1,5 @@
 
-function Footer() {
+function Text() {
 
   let customStyle = {
     color : "red",
@@ -17,4 +17,4 @@ function Footer() {
   )
 }
 
-export default Footer;
+export default Text;
