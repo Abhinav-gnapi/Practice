@@ -11,11 +11,11 @@ import Card from './components/UserCard.jsx'
 import List from './components/List.jsx';
 
 
-function createCard(list){
-  return (
-           <Card key={list.id} name={list.name} age={list.age} position={list.position} />
-  )
-}
+// function createCard(list){
+//   return (
+//            <Card key={list.id} name={list.name} age={list.age} position={list.position} />
+//   )
+// }
 
 
 function App() {
@@ -36,7 +36,8 @@ function App() {
 
        <Header />
         
-      {List.map(createCard)}
+      {/* {List.map(createCard)} */}
+      {List.map(list => <Card key={list.id} name={list.name} age={list.age} position={list.position} />)}
     </>
   )
 }

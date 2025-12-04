@@ -1,27 +1,33 @@
 const List = [
     {
         id: 1,
-        name: "abhi",
+        name: "Abhinav",
         age: 23,
-        position: "intern"
+        position: "Softare engineer Intern"
     }, 
     {
         id: 2,
-        name: "sabith",
+        name: "Sabith",
         age: 23,
-        position: "intern"
+        position: "Intern"
     },
     {
         id: 3,
-        name:"akash",
+        name:"Akash",
         age:22,
-        position:"designer"
+        position:"Designer"
     },
     {
         id: 4,
         name: "Hari",
         age:25,
         position:"Developer"
+    },
+    {
+        id: 5,
+        name: "Harish",
+        age:23,
+        position:"Intern"
     }
 ]
 export default List;
