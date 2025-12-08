@@ -2,9 +2,10 @@ import './App.css'
 import Login from './components/Login'
 import Counter from '../../Hooks/src/components/Counter';
 import React from 'react'
-import Hooks from './hooks/Hooks';
 
-const isLoggined = false;
+
+const isLoggined = true;
+const isRegistered = true
 const isUserRegistered = React.createContext();
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
     //   <Counter />
     // </>
 
-    <Hooks />
+    isLoggined ? <h1>Welcome User...</h1> : <Login isRegistered={isRegistered} />
+
   )
 }
 

@@ -2,8 +2,9 @@ import './App.css'
 import Counter from './components/Counter'
 import Hooks from './components/UseEffect'
 import ContextExample from './components/UseContext'
-import ReducerExample from './components/UseRender'
+import ReducerExample from './components/UseReducer'
 import RefExample from './components/RefExample'
+import UseImerativeHandle from './components/UseImperativeHandle'
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
       {/* <Hooks /> */}
       {/* <ContextExample /> */}
       {/* <ReducerExample /> */}
-      <RefExample />
+      {/* <RefExample /> */}
+      <UseImerativeHandle />
     </>
   )
 }
