@@ -1,9 +1,11 @@
 import './LoginStyle.css';
 import Input from './Input';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import {isUserRegistered} from '../App'
 
 
 function Login(props){
+    const status = useContext(isUserRegistered)
     const [state, setState] = useState("click login")
 
     return(
@@ -12,7 +14,7 @@ function Login(props){
             <Input type="text" placeholder="username" />
             <Input type="password" placeholder="password" />
             {/* {props.isRegistered ? null : <Input type="password" placeholder="confirm password" />} */}
-            {!props.isRegistered && <Input type="password" placeholder="confirm password" />}
+            {!props.status && <Input type="password" placeholder="confirm password" />}
             <button type="button" onClick={() => {setState("you clicked login"); console.log(state);}}> {props.isRegistered ? "Login" : "Register"}</button>
             <h3>{state}</h3>
             
