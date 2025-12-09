@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import './LoginStyle.css'
 
 function Login(){
@@ -6,6 +6,7 @@ function Login(){
     const [bgcolor, changeBgColor] = useState("");
     const [name, setName] = useState("");
     const [handleName, setHandleName] = useState("");
+    const inputRef = useRef();
 
     function handleMouseOver() {
         changeColor(false)
@@ -23,6 +24,7 @@ function Login(){
     }
     function HeadingName(event){
         setHandleName(name);
+        inputRef.current.value = ""
 
         event.preventDefault();
     }
@@ -30,7 +32,7 @@ function Login(){
         <>
             <form className="login" onSubmit={HeadingName}>
                 <p className="text">Hello {handleName}</p>
-                <input type="text" placeholder="What's your name" onChange={changeName}/>
+                <input type="text" placeholder="What's your name" onChange={changeName} ref={inputRef}/>
                 {/* <input type="password" placeholder="password" /> */}
                 <button onClick={() => changeBgColor("white")} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} style={{backgroundColor: color ? "black" : "red"}}>Submit</button>
             </form>

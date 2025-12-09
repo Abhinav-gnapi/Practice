@@ -1,4 +1,4 @@
-.login {
+form {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -11,4 +11,7 @@ input {
 .text {
     font-size: 30px;
     margin: 15px;
+}
+.email {
+    margin: 0;
 }

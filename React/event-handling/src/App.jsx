@@ -2,11 +2,20 @@
 import './App.css'
 import { animals } from './components/list'
 import Login from './components/Login'
+import { useRef } from "react";
+import Form from './components/Form';
 
 function App() {
-  const [loffy, puppy] = animals
-
-  console.log(animals)
+  // const [loffy, puppy] = animals
+  // const reference = useRef(true);
+  
+  // const handleUpdate = () => {
+  //   reference.current = !reference.current;
+  //   console.log(reference.current); // true
+  //   console.log(reference); // true
+  // };
+  // console.log(reference.current); // true
+  // console.log(animals)
   return (
     <>
       {/* {animals.map((list, ind) => (
@@ -17,7 +26,10 @@ function App() {
         </div>
         ))} */}
 
-        <Login />
+        {/* <Login /> */}
+
+      {/* <button onClick={handleUpdate}>Update</button> */}
+      <Form />
     </>
   )
 }
