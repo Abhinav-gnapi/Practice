@@ -1,0 +1,14 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+input {
+    height: 25px;
+    text-align: center;
+}
+.text {
+    font-size: 30px;
+    margin: 15px;
+}
