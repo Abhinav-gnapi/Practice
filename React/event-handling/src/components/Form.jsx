@@ -14,20 +14,23 @@ function Form(){
         setDetails((pervVal) => {
             if(name === "fname"){
                 return {
+                    ...pervVal,
                     fName: value,
-                    lName: pervVal.lName,
-                    email: pervVal.email
+                    // lName: pervVal.lName,
+                    // email: pervVal.email
                 };
             } else if(name === "lname"){
                 return {
-                    fName: pervVal.fName,
+                    ...pervVal,
+                    // fName: pervVal.fName,
                     lName: value,
-                    email: pervVal.email
+                    // email: pervVal.email
                 };
             } else if(name === "email"){
                 return {
-                    fName: pervVal.fName,
-                    lName: pervVal.lName,
+                    ...pervVal,
+                    // fName: pervVal.fName,
+                    // lName: pervVal.lName,
                     email: value
                 };
             }
