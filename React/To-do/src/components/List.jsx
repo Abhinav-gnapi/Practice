@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import './ListStyle.css'
-import { useContext } from 'react';
+// import { useContext } from 'react';
 import { createContext } from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
+import ListItem from './ListItem';
+import ListButton from './ListButton';
 
 const MyContext = createContext();
 function List() {
@@ -27,20 +29,41 @@ function List() {
         }
     }
 
-    useEffect(() => {
-        const storedData = JSON.parse(localStorage.getItem("todoList"));
-        if(storedData){
-            setData(storedData);
-        }
-    },[]);
+    // useEffect(() => {
+    //     const storedData = JSON.parse(localStorage.getItem("todoList"));
+    //     if(storedData){
+    //         setData(storedData);
+    //     }
+    // },[]);
     useEffect(() => {
         localStorage.setItem("todoList", JSON.stringify(data));
     }, [data]);
 
     function clearData(){
-        localStorage.clear("todoList")
+        localStorage.removeItem("todoList")
         setData([]);
     }
+
+    const [isMark, setMark] = useState([]);
+    function IsItemDone(id) {
+        setMark(prev => {
+            const copy = [...prev];
+            console.log(copy)
+            copy[id] = copy[id] === "line-through" ? "none" : "line-through";
+            return copy;
+        });
+    }
+    // console.log(isMark)
+
+
+    function deleteItem(id){
+        setData(pre => {
+            return pre.filter( (el, indx) => {
+                return indx !== id;
+            });
+        });
+    }
+
 return(
     <div className='conatiner'>
         <div className='heading'>
@@ -53,7 +76,14 @@ return(
         </div>
         <div className='list'>
             <ul>
-                {data.map((items,ind) => <li key={ind}>{items}</li>)}
+                <div className='listItems'>
+                {/* {data.map((items,ind) => <li key={ind} onClick={IsItemDone}  style={{textDecoration: isDone ? "line-through" : "none"}}>{items}</li>)} */}
+                {data.map((items, ind) => <ListItem key={ind} id={ind} element={items} onClick={IsItemDone}  style={{textDecoration: isMark[ind] || "none"}}/>)}
+                </div>
+                <div className='deleteButtons'>
+                {/* {data.map((items, ind) => <button key={ind}>Delete</button>)}    */}
+                {data.map((items, ind) => <ListButton key={ind} id={ind} onChecked={deleteItem}/>)}
+                </div>
             </ul>
         </div>
     </div>
