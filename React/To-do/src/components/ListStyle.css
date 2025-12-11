@@ -5,6 +5,7 @@
 
 input {
     height: 25px;
+    align-self: center;
 }
 /* button {
     height: 33px;
@@ -28,13 +29,20 @@ li{
  .deleteButtons{
     display: flex;
     flex-direction: column;
-    /* padding: 0.4em 0.6em; */
     font-size: 0.3em;
     font-weight: 400;
     row-gap: 7.3px;
+}
+.trashIcon:hover {
+    color: red;
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out
 }
 ul {
     display: flex;
     justify-content: space-between;
     width: 160px;
+}
+.topButton{
+    padding: 6px 8px;
 }

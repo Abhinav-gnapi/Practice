@@ -6,6 +6,8 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import ListItem from './ListItem';
 import ListButton from './ListButton';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import UploadIcon from '@mui/icons-material/Upload';
 
 const MyContext = createContext();
 function List() {
@@ -71,8 +73,8 @@ return(
         </div>
         <div className='form'>
           <input type='text' name='inputData' onChange={addList} ref={inputRef}></input>
-          <button onClick={submitData}>Add</button>
-          <button onClick={clearData}>Clear</button>
+          <button className='topButton' onClick={submitData}><UploadIcon  /></button>
+          <button className='topButton' onClick={clearData}><DeleteForeverIcon  /></button>
         </div>
         <div className='list'>
             <ul>
