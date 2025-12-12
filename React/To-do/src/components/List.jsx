@@ -8,6 +8,7 @@ import ListItem from './ListItem';
 import ListButton from './ListButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import UploadIcon from '@mui/icons-material/Upload';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 
 const MyContext = createContext();
 function List() {
@@ -69,7 +70,7 @@ function List() {
 return(
     <div className='conatiner'>
         <div className='heading'>
-          <h1>To-do List</h1>
+          <h1><FormatListBulletedIcon className='headingIcon'/>To-do List</h1>
         </div>
         <div className='form'>
           <input type='text' name='inputData' onChange={addList} ref={inputRef}></input>

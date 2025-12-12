@@ -46,3 +46,11 @@ ul {
 .topButton{
     padding: 6px 8px;
 }
+.heading {
+    position: relative;
+}
+.headingIcon {
+    position: absolute;
+    margin-top: 46px;
+    margin-left: -30px;
+}
