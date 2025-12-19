@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+        <input type="text" class="inputfield">
+        <button onclick="addKey()">Add Key</button>
+        <button onclick="deleteKey()">Delete Key</button>
+        </div>
+        <p id="reverse"></p>
+    </div>
+    <script>
+        const myObject = {};
+        console.log(myObject)
+        const addKey = (() => {
+            let keyName = document.querySelector("input").value;
+            myObject[keyName] = ""
+            console.log(myObject)
+        })
+
+        const deleteKey = (() => {
+            let keyName = document.querySelector("input").value;
+            if(keyName in myObject){
+                delete myObject[keyName];
+                console.log(myObject)
+            }
+            else {
+                console.log("Key is not present!")
+            }
+        })
+    </script>
+</body>
+</html>
